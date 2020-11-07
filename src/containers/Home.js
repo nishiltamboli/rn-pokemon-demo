@@ -22,13 +22,13 @@ function Home(props) {
 const mapStateToProps = (state) => {
   return {
     allPokemons: state.home.allPokemons,
-    page: state.home.page,
+    offset: state.home.offset,
     limit: state.home.limit,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    getAllPokemons: (page, limit) => dispatch(getAllPokemons(page, limit)),
+    getAllPokemons: (offset, limit) => dispatch(getAllPokemons(offset, limit)),
   };
 };
 

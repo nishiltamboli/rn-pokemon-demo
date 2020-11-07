@@ -1,6 +1,6 @@
 const initialState = {
   allPokemons: [],
-  page: 1,
+  offset: 1,
   limit: 10,
 };
 
