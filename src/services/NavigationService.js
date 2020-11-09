@@ -9,20 +9,6 @@ const NavigationService = {
   goBack() {
     RootNavigation.goBack();
   },
-
-  resetToRoute(routeName, params) {
-    RootNavigation.dispatch(
-      CommonActions.reset({
-        index: 1,
-        routes: [
-          {
-            name: routeName,
-            params: params,
-          }
-        ],
-      })
-    );
-  }
 };
 
 export default NavigationService;

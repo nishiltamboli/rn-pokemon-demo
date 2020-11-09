@@ -14,7 +14,7 @@ const getAllPokemons = (nextUrl, reset) => {
       dispatch({ type: GET_ALL_POKEMONS_FAILED, isReset: reset });
     }
   };
-}
+};
 
 export {
   getAllPokemons,

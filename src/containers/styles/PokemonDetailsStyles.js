@@ -13,7 +13,7 @@ export default StyleSheet.create({
     color: Colors.textDark,
     fontSize: 20,
     textAlign: 'center',
-    fontWeight: "600",
+    fontWeight: '600',
     textTransform: 'capitalize',
     paddingBottom: 5
   },
@@ -21,7 +21,7 @@ export default StyleSheet.create({
     color: Colors.textLight,
     fontSize: 14,
     textAlign: 'center',
-    fontWeight: "600",
+    fontWeight: '600',
     paddingBottom: 5
   },
   pokemonOtherAttributeLast: {

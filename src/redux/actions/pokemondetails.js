@@ -1,4 +1,5 @@
 import ApiService from '../../api/ApiService';
+import UtilService from '../../services/UtilService';
 import { GET_POKEMON_DETAILS_FAILED, GET_POKEMON_DETAILS_STARTED, GET_POKEMON_DETAILS_SUCCESS } from './actionTypes';
 
 const getPokemonDetails = (url) => {
@@ -10,10 +11,10 @@ const getPokemonDetails = (url) => {
     }
     catch(e) {
       UtilService.toast('Failed to load pokemon details');
-      dispatch({ type: GET_POKEMON_DETAILS_FAILED, isReset: reset });
+      dispatch({ type: GET_POKEMON_DETAILS_FAILED });
     }
   };
-}
+};
 
 export {
   getPokemonDetails,

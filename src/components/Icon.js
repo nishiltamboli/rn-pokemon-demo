@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -16,8 +16,8 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 function Icon(props) {
-  
-  getIcon = () => {
+
+  const getIcon = () => {
     let iconElement =  <View />;
     switch( props.family ) {
     case 'AntDesign':
@@ -64,11 +64,11 @@ function Icon(props) {
       break;
     }
     return iconElement;
-  }
+  };
 
   return (
     getIcon()
-  )
-} 
+  );
+}
 
 export default Icon;

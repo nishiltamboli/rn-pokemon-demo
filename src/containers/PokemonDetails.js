@@ -20,9 +20,9 @@ function PokemonDetails(props) {
     <View style={[Styles.mainContainer, Styles.backWhite]}>
       {
         isGetPokemonDetailsLoading ?
-        <ActivityIndicator size="large" color="#000"></ActivityIndicator>
-        :
-        null
+          <ActivityIndicator size="large" color="#000"></ActivityIndicator>
+          :
+          null
       }
       <>
         <View style={[PokemonDetailsStyles.pokemonMainDetailsContainer]}>
@@ -39,31 +39,31 @@ function PokemonDetails(props) {
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Abilities</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.abilities.map((ability) => { return ability.ability.name }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.abilities.map((ability) => { return ability.ability.name; }).join(', ') : ''}</Text>
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Forms</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.forms.map((form) => { return form.name }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.forms.map((form) => { return form.name; }).join(', ') : ''}</Text>
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Game Indices</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.game_indices.map((indices) => { return `${indices.game_index} - ${indices.version.name}` }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.game_indices.map((indices) => { return `${indices.game_index} - ${indices.version.name}`; }).join(', ') : ''}</Text>
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Game Indices</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.game_indices.map((indices) => { return `${indices.game_index} - ${indices.version.name}` }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.game_indices.map((indices) => { return `${indices.game_index} - ${indices.version.name}`; }).join(', ') : ''}</Text>
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Moves</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.moves.map((move) => { return move.move.name }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.moves.map((move) => { return move.move.name; }).join(', ') : ''}</Text>
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Stats</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.stats.map((stat) => { return `${stat.stat.name} - ${stat.base_stat}` }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.stats.map((stat) => { return `${stat.stat.name} - ${stat.base_stat}`; }).join(', ') : ''}</Text>
           </View>
           <View style={[PokemonDetailsStyles.pokemonOtherAttribute, PokemonDetailsStyles.pokemonOtherAttributeLast]}>
             <Text style={[PokemonDetailsStyles.pokemonOtherAttributeTitle]}>Types</Text>
-            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.types.map((type) => { return type.type.name }).join(', ') : ''}</Text>
+            <Text style={[PokemonDetailsStyles.pokemonOtherAttributeValue]}>{pokemonDetails ? pokemonDetails.types.map((type) => { return type.type.name; }).join(', ') : ''}</Text>
           </View>
         </ScrollView>
       </>

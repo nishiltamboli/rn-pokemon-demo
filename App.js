@@ -23,7 +23,7 @@ const Stack = createStackNavigator();
 const App: () => React$Node = () => {
   React.useEffect(() => {
     return () => {
-      isReadyRef.current = false
+      isReadyRef.current = false;
     };
   }, []);
   return (

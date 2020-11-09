@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import React, { useCallback, useEffect } from 'react';
+import { View, Text, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Styles from '../theme/Styles';
 import Colors from '../theme/Colors';
 import HomeStyles from './styles/HomeStyles';
@@ -11,17 +11,17 @@ import { getAllPokemons } from '../redux/actions/home';
 
 function Home(props) {
   const { getAllPokemons, allPokemons, isGetAllPokemonLoading, nextUrl } = props;
-  
+
   useEffect(() => {
     getAllPokemons(null, true);
   }, []);
 
-  openPokemonDetails = (url) => {
+  const openPokemonDetails = (url) => {
     NavigationService.goToRoute('PokemonDetails', { url });
-  }
+  };
 
   const renderItem = useCallback(
-    ({ item }) => <TouchableOpacity style={HomeStyles.pokemonItem} onPress={() => openPokemonDetails(item.url)}>
+    ({ item }) => <TouchableOpacity activeOpacity={0.8} style={HomeStyles.pokemonItem} onPress={() => openPokemonDetails(item.url)}>
       <Text style={HomeStyles.pokemonItemText}>
         {item.name}
       </Text>
@@ -34,11 +34,18 @@ function Home(props) {
 
   return (
     <View style={[HomeStyles.mainContainer, Styles.backWhite]}>
+      {
+        isGetAllPokemonLoading && nextUrl==='FIRST' ?
+          <ActivityIndicator size="large" color="#000"></ActivityIndicator>
+          :
+          null
+      }
       <FlatList
         onEndReached={() => getAllPokemons(nextUrl, false)}
-        onEndReachedThreshold={0.8}
+        onEndReachedThreshold={1}
         refreshing={isGetAllPokemonLoading}
         data={allPokemons}
+        contentContainerStyle={[Styles.flexGrow1]}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
       />

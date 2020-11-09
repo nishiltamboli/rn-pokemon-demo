@@ -18,7 +18,7 @@ export default StyleSheet.create({
   pokemonItemText: {
     color: Colors.textDark,
     fontSize: 18,
-    fontWeight: "600",
+    fontWeight: '600',
     textTransform: 'capitalize'
   }
 });

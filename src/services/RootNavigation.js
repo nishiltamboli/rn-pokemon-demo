@@ -7,13 +7,11 @@ export const navigationRef = React.createRef();
 export function navigate(name, params) {
   if (isReadyRef.current && navigationRef.current) {
     navigationRef.current.navigate(name, params);
-  } else {
   }
 }
 
-export function goBack(name, params) {
+export function goBack() {
   if (isReadyRef.current && navigationRef.current) {
     navigationRef.current.goBack();
-  } else {
   }
 }
