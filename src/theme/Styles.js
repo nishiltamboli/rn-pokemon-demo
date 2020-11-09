@@ -21,5 +21,11 @@ export default StyleSheet.create({
   },
   textLower: {
     textTransform: 'lowercase'
+  },
+  mainContainer: {
+    flex: 1
+  },
+  backWhite: {
+    backgroundColor: '#fff',
   }
 });
