@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Colors from './Colors';
 
 export default StyleSheet.create({
   flex1: {
@@ -30,5 +31,16 @@ export default StyleSheet.create({
   },
   backWhite: {
     backgroundColor: '#fff',
+  },
+  noContentFoundContainer: {
+    paddingVertical: 50,
+    alignItems: 'center',
+  },
+  noContentFoundContainerText: {
+    color: Colors.textLight,
+    paddingTop: 10,
+    fontSize: 18,
+    fontWeight: '600',
+    textTransform: 'capitalize'
   }
 });

@@ -9,7 +9,7 @@ const pokemondetails = (state = initialState, action) => {
   switch(action.type) {
 
   case GET_POKEMON_DETAILS_STARTED:
-    return { ...state, isGetPokemonDetailsLoading: true };
+    return { ...state, isGetPokemonDetailsLoading: true, pokemonDetails: null };
 
   case GET_POKEMON_DETAILS_SUCCESS:
     return { ...state, pokemonDetails: action.pokemonDetails, isGetPokemonDetailsLoading: false };

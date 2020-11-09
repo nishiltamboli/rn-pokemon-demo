@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { View, Text, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import Styles from '../theme/Styles';
 import Colors from '../theme/Colors';
 import HomeStyles from './styles/HomeStyles';
@@ -8,6 +8,7 @@ import Icon from '../components/Icon';
 
 import { connect } from 'react-redux';
 import { getAllPokemons } from '../redux/actions/home';
+import StaticContentComponent from '../components/StaticContentComponent';
 
 function Home(props) {
   const { getAllPokemons, allPokemons, isGetAllPokemonLoading, nextUrl } = props;
@@ -32,11 +33,16 @@ function Home(props) {
 
   const keyExtractor = useCallback((item, index) => index.toString(), []);
 
+  const renderListEmptyComponent = useCallback(
+    () => <StaticContentComponent message="No pokemons found" />,
+    []
+  );
+
   return (
     <View style={[HomeStyles.mainContainer, Styles.backWhite]}>
       {
         isGetAllPokemonLoading && nextUrl==='FIRST' ?
-          <ActivityIndicator size="large" color="#000"></ActivityIndicator>
+          <StaticContentComponent message="Fetching all pokemons" showLoader={true} />
           :
           null
       }
@@ -48,6 +54,7 @@ function Home(props) {
         contentContainerStyle={[Styles.flexGrow1]}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
+        ListEmptyComponent={renderListEmptyComponent}
       />
     </View>
   );
